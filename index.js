@@ -1,10 +1,11 @@
 import pgPromise from "pg-promise";
 import recipe_service from "./service/recipe_service.js";
 import cors from "cors"
-import 'dotenv/config';
+import dotenv from 'dotenv'
 import express from "express";
 import recipe_api from "./api/recipes.js";
 
+dotenv.config();
 
 const pgp = pgPromise();
 
