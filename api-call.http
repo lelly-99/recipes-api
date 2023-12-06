@@ -1,0 +1,13 @@
+
+# display dishes
+GET http://localhost:3007/api/dishes
+
+# select dish
+GET http://localhost:3007/api/dishes/1
+
+# display results for selected dish
+GET http://localhost:3007/api/recipes/1
+
+
+
+
