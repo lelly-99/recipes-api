@@ -1,7 +1,6 @@
 import pgPromise from "pg-promise";
 import recipe_service from "./service/recipe_service.js";
 import cors from "cors"
-import 'dotenv/config';
 import express from "express";
 import recipe_api from "./api/recipes.js";
 
@@ -16,7 +15,8 @@ if (process.env.DATABASE_URL && !local) {
 }
 
 // Database connection
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.DATABASE_URL || "postgres://acmtsvuo:KO-AC2wJi3vXKoeaiMtUBPAj-fKXIXsR@kesavan.db.elephantsql.com/acmtsvuo?ssl=true";
+
 const database = pgp(connectionString);
 
 //database instance
