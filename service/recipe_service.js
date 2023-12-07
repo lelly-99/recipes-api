@@ -62,7 +62,12 @@ const recipe_service = (db) => {
     return await db.one("SELECT * FROM recipes WHERE dishes_id = $1", [dishId.dish_id]);
   };
 
-  const addOrUpdateUserPoints = async (userId, dishesCooked) => {
+  const addOrUpdateUserPoints = async (userEmail, dishesCooked) => {
+
+    const userId = await db.one(
+      'SELECT id FROM users WHERE user_email = $1',
+      [userEmail]
+    );
 
     const dishPoints = await db.one(
       'SELECT dish_points FROM dishes WHERE dish_name = $1',
