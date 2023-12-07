@@ -28,6 +28,7 @@ CREATE TABLE recipes (
 );
 
 
+
 INSERT INTO dishes (dish_name, dish_image) VALUES
 ('Honey & Orange Glazed Carrots', 'https://www.eatingwell.com/thmb/F6HsFFEw9LHzy1ITrSzLzXxmeqM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/7104339-4f33c5eae8594a1f9831e76f41ce99b9.jpg'),
 ('Carrot Soup', 'https://www.eatingwell.com/thmb/vluYF2Sx7V55Au64BUZdm6-Q_Wo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/carrot-soup-e2a833ef5926415580ca4f1efaff31ba.jpg'),
