@@ -23,9 +23,9 @@ POST http://localhost:3007/api/signUp
 content-type: application/json
 
 {
-	"name" : "lwazis",
-	"password" : "mothas",
-    "email":"lwazis@gmail.com"
+	"name" : "Zwile",
+	"password" : "voli",
+    "email":"voli@gmail.com"
 }
 
 //const {name, password, email} = req.body;
@@ -35,10 +35,13 @@ POST http://localhost:3007/api/logIn
 content-type: application/json
 
 {
-	"password" : "mothas",
-    "email":"lwazis@gmail.com"
+	"password" : "math",
+    "email":"math@gmail.com"
 }
 
 
 
 
+///
+### leaderboard
+GET http://localhost:3007/api/leaderboardData

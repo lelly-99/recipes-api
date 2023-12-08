@@ -97,9 +97,12 @@ const recipe_service = (db) => {
   const leaderboardData = async () => {
 
     return await db.manyOrNone(
-      `SELECT * FROM leaderboard
-      ORDER BY points DESC
-      LIMIT 6;`
+      `SELECT leaderboard.*, users.user_name
+      FROM leaderboard
+      JOIN users ON leaderboard.user_id = users.id
+      ORDER BY leaderboard.points DESC
+      LIMIT 6;
+      `
     );
 
   };
