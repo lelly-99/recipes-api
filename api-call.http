@@ -1,6 +1,10 @@
 
 # display dishes
-GET http://localhost:3007/api/dishes/'oats'
+GET http://localhost:3007/api/dishes
+
+
+### display dishes for item
+GET http://localhost:3007/api/dishes/oat
 
 
 ### select dish
