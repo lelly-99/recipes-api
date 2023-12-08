@@ -56,3 +56,9 @@ Serve immediately.',
 
 
   
+INSERT INTO dishes (dish_id, dish_name, dish_image, dish_points)
+VALUES
+  (1, 'Apple Cinnamon & Nuts Oatmeal', 'https://veggiecurean.com/wp-content/uploads/2016/04/steel-cut-oatmeal-with-apples-1500x750.jpg', 38),
+  (2, 'Oat Cookies', 'https://lovingitvegan.com/wp-content/uploads/2021/10/Vegan-Oatmeal-Cookies-17.jpg', 40),
+  (3, 'Overnight Oats', 'https://feelgoodfoodie.net/wp-content/uploads/2023/04/Overnight-Oats-18.jpg', 20),
+  (4, 'Oat Muffins', 'https://www.ihearteating.com/wp-content/uploads/2019/01/Oatmeal-muffins-5-800.jpg', 40);

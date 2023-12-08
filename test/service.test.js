@@ -74,8 +74,8 @@ describe("The recipe_service Function", function () {
 
     it("should be update points on the leaderboard", async function () {
         
-         await recipService.addOrUpdateUserPoints(1,'Carrot Soup')
-         await recipService.addOrUpdateUserPoints(1,'Carrot Soup')
+         await recipService.addOrUpdateUserPoints("user1@gmail.com",'Carrot Soup')
+         await recipService.addOrUpdateUserPoints("user1@gmail.com",'Carrot Soup')
 
          const [leaderboardData] = await recipService.leaderboardData()
      

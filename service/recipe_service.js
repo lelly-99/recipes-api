@@ -50,11 +50,13 @@ const recipe_service = (db) => {
   };
 
   const selectDishesByItem = async (item) => {
-    return await db.manyOrNone("SELECT * FROM dishes WHERE dish_name LIKE $1", [`%${item}%`]);
+    
+    return await db.manyOrNone("SELECT * FROM dishes WHERE Lower(dish_name) LIKE $1", [`%${item.toLowerCase()}%`]);
   };
 
 
   const selectRecipeByDishName = async (dishName) => {
+    
     const dishId = await db.one(
       'SELECT dish_id FROM dishes WHERE dish_name = $1',
       [dishName]
@@ -62,7 +64,12 @@ const recipe_service = (db) => {
     return await db.one("SELECT * FROM recipes WHERE dishes_id = $1", [dishId.dish_id]);
   };
 
-  const addOrUpdateUserPoints = async (userId, dishesCooked) => {
+  const addOrUpdateUserPoints = async (userEmail, dishesCooked) => {
+
+    const userId = await db.one(
+      'SELECT id FROM users WHERE user_email = $1',
+      [userEmail]
+    );
 
     const dishPoints = await db.one(
       'SELECT dish_points FROM dishes WHERE dish_name = $1',
@@ -78,7 +85,7 @@ const recipe_service = (db) => {
       DO UPDATE
       SET dishes_cooked = leaderboard.dishes_cooked + $2,
           points = leaderboard.points + $3;
-    `, [userId, 1, dishPoints.dish_points]);
+    `, [userId.id, 1, dishPoints.dish_points]);
 
 
   };
@@ -86,7 +93,9 @@ const recipe_service = (db) => {
   const leaderboardData = async () => {
 
     return await db.manyOrNone(
-      'SELECT * FROM leaderboard'
+      `SELECT * FROM leaderboard
+      ORDER BY points DESC
+      LIMIT 6;`
     );
 
   };
