@@ -79,7 +79,7 @@ export default function recipe_api(recipe_service_instance) {
   async function addUser(req, res) {
     const {name, password, email} = req.body;
     try {
-       await recipe_service_instance.display_dish_by_id(name, password, email);
+       await recipe_service_instance.addUser(name, password, email);
       res.json({
         status: "success"
       });

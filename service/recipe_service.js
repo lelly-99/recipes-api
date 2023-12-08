@@ -5,6 +5,8 @@ const recipe_service = (db) => {
 
 
   const addUser = async (name, password, email) => {
+    
+    
     //hash the password
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -61,7 +63,9 @@ const recipe_service = (db) => {
       'SELECT dish_id FROM dishes WHERE dish_name = $1',
       [dishName]
     );
-    return await db.one("SELECT * FROM recipes WHERE dishes_id = $1", [dishId.dish_id]);
+    return await db.one(`SELECT recipes.*, dishes.dish_name
+    FROM recipes
+    JOIN dishes ON recipes.dishes_id = dishes.dish_id;`, [dishId.dish_id]);
   };
 
   const addOrUpdateUserPoints = async (userEmail, dishesCooked) => {

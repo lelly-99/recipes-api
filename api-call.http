@@ -18,5 +18,27 @@ GET http://localhost:3007/api/recipes/1
 GET http://localhost:3007/api/recipe/Apple Cinnamon & Nuts Oatmeal
 
 
+### sign up
+POST http://localhost:3007/api/signUp
+content-type: application/json
+
+{
+	"name" : "lwazis",
+	"password" : "mothas",
+    "email":"lwazis@gmail.com"
+}
+
+//const {name, password, email} = req.body;
+
+### sign up
+POST http://localhost:3007/api/logIn
+content-type: application/json
+
+{
+	"password" : "mothas",
+    "email":"lwazis@gmail.com"
+}
+
+
 
 
