@@ -37,7 +37,10 @@ app.use(cors());
 app.get('/api/',api.api );
 
 //display all dishes for the scanned item
-app.get('/api/dishes/:dish_name', api.all_dishes );
+app.get('/api/dishes', api.all_dishes );
+
+//display all dishes for the scanned item
+app.get('/api/dishes/:dish_name', api.allDishesforItem );
 
 //select dish by id
 app.get('/api/dishes/:dish_id',api.dish_by_id );

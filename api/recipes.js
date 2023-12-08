@@ -8,8 +8,23 @@ export default function recipe_api(recipe_service_instance) {
       console.log("Error getting api", err);
     }
   }
-  
   async function all_dishes(req, res) {
+    try {
+
+      const dishes = await recipe_service_instance.show_dishes();
+      res.json({
+        status: "success",
+        data: dishes,
+      });
+    } catch (err) {
+			res.json({
+				status: "error",
+				error: err.stack
+			});
+		}
+  }
+  
+  async function allDishesforItem(req, res) {
     try {
       const item = req.params.item
 
@@ -152,6 +167,7 @@ export default function recipe_api(recipe_service_instance) {
     logIn,
     selectRecipeByDishName,
     updateLeaderboard,
-    getLeaderboardData
+    getLeaderboardData,
+    allDishesforItem
   };
 }
