@@ -56,6 +56,7 @@ const recipe_service = (db) => {
 
 
   const selectRecipeByDishName = async (dishName) => {
+    
     const dishId = await db.one(
       'SELECT dish_id FROM dishes WHERE dish_name = $1',
       [dishName]
@@ -92,7 +93,9 @@ const recipe_service = (db) => {
   const leaderboardData = async () => {
 
     return await db.manyOrNone(
-      'SELECT * FROM leaderboard'
+      `SELECT * FROM leaderboard
+      ORDER BY points DESC
+      LIMIT 6;`
     );
 
   };

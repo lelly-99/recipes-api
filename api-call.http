@@ -14,5 +14,9 @@ GET http://localhost:3007/api/dishes/1
 GET http://localhost:3007/api/recipes/1
 
 
+### display results for selected dish
+GET http://localhost:3007/api/recipe/Apple Cinnamon & Nuts Oatmeal
+
+
 
 

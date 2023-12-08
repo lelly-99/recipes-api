@@ -110,7 +110,7 @@ export default function recipe_api(recipe_service_instance) {
   }
 
   async function selectRecipeByDishName(req, res) {
-    const dishName = req.params.dishName;
+    const dishName = req.params.name;
     try {
        const dishData = await recipe_service_instance.selectRecipeByDishName(dishName);
       res.json({

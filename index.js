@@ -49,7 +49,7 @@ app.get('/api/dishes/:dish_id',api.dish_by_id );
 app.get('/api/recipes/:dishes_id', api.selected_dish);
 
 //Select recipe for dish
-app.get('/api/dishes/:name', api.selectRecipeByDishName);
+app.get('/api/recipe/:name', api.selectRecipeByDishName);
 
 //Select recipe for dish
 app.get('/api/signUp', api.addUser);
