@@ -104,9 +104,6 @@ const recipe_service = (db) => {
 
   };
 
-
-
-
   const show_dishes = async () => {
     return await db.manyOrNone("SELECT * FROM Dishes");
   };
