@@ -52,7 +52,7 @@ app.get('/api/recipes/:dishes_id', api.selected_dish);
 app.get('/api/recipe/:name', api.selectRecipeByDishName);
 
 //Select recipe for dish
-app.get('/api/signUp', api.addUser);
+app.post('/api/signUp', api.addUser);
 
 //Select recipe for dish
 app.post('/api/logIn', api.logIn);
