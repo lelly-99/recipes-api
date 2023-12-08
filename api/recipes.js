@@ -127,7 +127,7 @@ export default function recipe_api(recipe_service_instance) {
   }
 
   async function updateLeaderboard(req, res) {
-    const {email , dishesCooked} = req.body.dishName;
+    const {email , dishesCooked} = req.body;
     try {
         await recipe_service_instance.addOrUpdateUserPoints(email, dishesCooked);
       res.json({

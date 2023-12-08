@@ -45,3 +45,13 @@ content-type: application/json
 ///
 ### leaderboard
 GET http://localhost:3007/api/leaderboardData
+
+
+### update leaderboard
+POST http://localhost:3007/api/leaderboard
+content-type: application/json
+
+{
+    "email":"math@gmail.com",
+	"dishesCooked":"Oat Cookies"
+}
