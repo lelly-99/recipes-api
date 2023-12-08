@@ -50,7 +50,8 @@ const recipe_service = (db) => {
   };
 
   const selectDishesByItem = async (item) => {
-    return await db.manyOrNone("SELECT * FROM dishes WHERE dish_name LIKE $1", [`%${item}%`]);
+    
+    return await db.manyOrNone("SELECT * FROM dishes WHERE Lower(dish_name) LIKE $1", [`%${item.toLowerCase()}%`]);
   };
 
 
@@ -83,7 +84,7 @@ const recipe_service = (db) => {
       DO UPDATE
       SET dishes_cooked = leaderboard.dishes_cooked + $2,
           points = leaderboard.points + $3;
-    `, [userId, 1, dishPoints.dish_points]);
+    `, [userId.id, 1, dishPoints.dish_points]);
 
 
   };
